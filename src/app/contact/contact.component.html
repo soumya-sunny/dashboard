@@ -1,0 +1,33 @@
+<p>
+  {{title|uppercase}}
+</p>
+<form [formGroup]="contactForm" novalidate class="form-horizontal"  (ngSubmit)="onSubmit()" >
+	 <div class="form-group">
+    <label class="col-sm-2 control-label">Name: </label>
+    <div class="col-md-6">
+      <input class="form-control" formControlName="name">
+  </div>
+  </div>
+   <div class="form-group">
+    <label class="col-sm-2 control-label">Mobile: </label>
+      <div class="col-md-6">
+      <input class="form-control" formControlName="mobile">
+    </div>
+  </div>
+
+ <div class="form-group">
+    <label class="col-sm-2 control-label">Email: </label>
+      <div class="col-md-6">
+      <input class="form-control" formControlName="email">
+    </div>
+  </div>
+ <div class="form-group">
+    <label class="col-sm-2 control-label">Message: </label>
+      <div class="col-md-6">
+      <textarea class="form-control" formControlName="message" rows="3"></textarea>
+    </div>
+  </div>
+
+   <button type="submit"
+            [disabled]="!contactForm.valid" class="btn btn-success">Save</button>
+</form>
